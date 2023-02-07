@@ -72,5 +72,6 @@ class TifProcessing {
 
 
 
-module.exports = {};
+module.exports = ProcessingThread;
+
 
