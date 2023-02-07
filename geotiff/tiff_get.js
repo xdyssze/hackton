@@ -33,7 +33,7 @@ const download = (url, dest, cb) => {
 };
 
 
-country = "SWE";
-height = "100";
-// wihfih
-download(`https://globalwindatlas.info/api/gis/country/${country}/power-density/${height}`, "./db/test.tif", callback);
+const country = "SWE";
+const height = "100";
+// download .tif
+download(`https://globalwindatlas.info/api/gis/country/${country}/power-density/${height}`, `./db/${country}_${height}m.tif`, callback);
