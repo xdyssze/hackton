@@ -10,5 +10,5 @@ async function get_power(country, height, coords) {
     bbox: coords
   });
 
-  console.log(data);
+  return(data)
 }
