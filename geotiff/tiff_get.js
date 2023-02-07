@@ -35,4 +35,5 @@ const download = (url, dest, cb) => {
 
 country = "SWE";
 height = "100";
+// wihfih
 download(`https://globalwindatlas.info/api/gis/country/${country}/power-density/${height}`, "./db/test.tif", callback);
