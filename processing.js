@@ -2,29 +2,24 @@
 // skickar tillbaka en string i princip med vilka platser som är bäst, och second best
 const TifGet = require('./tifget');
 const wc = require('which-country');
-
+const gd = require('gdal-js');
 
 
 //
-class processingThread {
+class ProcessingThread {
     country;
     point;
-    tif;
+    tifHandler;
+    height;
     constructor(d) {
         this.point = [d.pointX, d.pointY];
         this.country = wc([d.pointX, d.pointY]);
-        this.tif = tifGet(this.country);
+        this.height = d.height;
+        tifHandler = new TifProcessing(tifGet(this.country));
     }
-
-
-
-
-
-
-
-
-
     
+
+
     returnDataCreator(data) {
         var f = {
             "org": [data.orgx, data.orgy],
@@ -37,6 +32,15 @@ class processingThread {
     };
 }
 
+class TifProcessing {
+    constructor(tif) {
+
+    }
+
+    getCordinateValue() {
+
+    }
+}
 
 
 

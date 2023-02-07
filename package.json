@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "gdal-js": "^2.2.0",
     "which-country": "^1.0.0"
   }
 }
