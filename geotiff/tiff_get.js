@@ -37,4 +37,4 @@ const country = "SWE";
 const height = "100";
 // download .tif
 download(`https://globalwindatlas.info/api/gis/country/${country}/power-density/${height}`, `./db/${country}_${height}m.tif`, callback);
-//test
+// testt
