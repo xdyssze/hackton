@@ -5,11 +5,11 @@ import {promises as fs} from "fs";
 const dbLocation = "./database"
 
 class Database {
-    private static async createDatabaseFolder() {
+    private static async createDatabaseFolder(): Promise<void> {
         await fs.mkdir(dbLocation);
     }
 
-    private static async databaseFolderExistance() {
+    private static async databaseFolderExistance(): Promise<boolean> {
         try {
             await fs.readFile(dbLocation);
 
@@ -21,7 +21,7 @@ class Database {
         }
     }
 
-    private static async databaseFolder() {
+    private static async databaseFolder(): Promise<void> {
         const existance = await this.databaseFolderExistance();
         
         if (existance) return;
