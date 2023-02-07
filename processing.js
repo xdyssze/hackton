@@ -16,6 +16,7 @@ class ProcessingThread {
         this.country = wc([d.pointX, d.pointY]);
         this.height = d.height;
         tifHandler = new TifProcessing(tifGet(this.country));
+        
     }
     
 
@@ -31,6 +32,11 @@ class ProcessingThread {
         return(JSON.stringify(f));
     };
 }
+
+
+
+
+
 
 class TifProcessing {
     // vi ska han en array med alla värden i ett område., som stoppas in efteråt.
