@@ -2,7 +2,7 @@
 // skickar tillbaka en string i princip med vilka platser som är bäst, och second best
 const TifGet = require('./tifget');
 const wc = require('which-country');
-const gd = require('gdal-js');
+const gd = require('gdal-next');
 
 
 //
@@ -33,12 +33,21 @@ class ProcessingThread {
 }
 
 class TifProcessing {
-    constructor(tif) {
-
+    // vi ska han en array med alla värden i ett område., som stoppas in efteråt.
+    boxSize;
+    tbox;
+    constructor(tif, box) {
+      this.boxSize = box;
+      tbox = gd.open(tif)
     }
+    // skaffar i en viss ruta.
 
-    getCordinateValue() {
-
+    getValues() {
+        var v;
+        return(v);
+    }
+    getCords() {
+        // 
     }
 }
 
