@@ -12,6 +12,3 @@ async function get_power(country, height, coords) {
 
   console.log(data);
 }
-
-const coords = [16.474484, 56.559733, 16.502838, 56.543965];
-get_power("SWE", "100", coords);
