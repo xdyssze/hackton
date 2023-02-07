@@ -1,6 +1,10 @@
+const { Console } = require("console");
 const fs = require("fs");
 const request = require("request");
 
+function format_path (country, height) {
+  return `./db/${country}_${height}m.tif`;
+}
 
 function callback(message) {
   console.warn(message);
@@ -33,8 +37,17 @@ const download = (url, dest, cb) => {
 };
 
 
+function get_tiff(country, height) {
+  if (fs.existsSync(format_path(country, height))) {
+    // File already exists
+    console.log("File already exists.");
+    return;
+  }
+  console.log("Downloading file...");
+  download(`https://globalwindatlas.info/api/gis/country/${country}/power-density/${height}`, format_path(country, height), callback)
+}
+
 const country = "SWE";
 const height = "100";
 // download .tif
-download(`https://globalwindatlas.info/api/gis/country/${country}/power-density/${height}`, `./db/${country}_${height}m.tif`, callback);
-//test
+get_tiff(country, height);
